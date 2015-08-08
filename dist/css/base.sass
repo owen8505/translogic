@@ -1,0 +1,124 @@
+// Importamos estilos externos
+@import "vendor/bootstrap.min.css"
+@import "vendor/bootstrap-theme.min.css"
+
+// Importamos variables globales
+@import "common/variables"
+@import "common/mixins"
+
+// Importamos los estilos del layout
+@import "layout/navigation"
+
+// Importamos los estilos de los módulos
+@import "modules/index"
+
+
+body
+    background-color: $color-gray-2
+    margin: 0
+    padding: 0
+
+.header-content
+    background: none
+    +rem(padding, 2rem)
+
+    // El media query aplica cuando la pantalla es igual o mayor al width de small, fuera del media query aplica a pantallas menores a este ancho
+    @media screen and (min-width: $max-sm-width)
+        background: transparent url('../img/banner.jpg') no-repeat bottom right
+        +rem(padding, 2rem 0 6rem)
+
+    .contact-phone-container
+        +rem(font-size, 1.6rem)
+        font-weight: bold
+        text-align: center
+
+        @media screen and (min-width: $max-sm-width)
+            +rem(font-size, 2.5rem)
+            text-align: right
+
+        .contact-phone
+            background-color: black
+            color: $color-orange-1
+            display: inline-block
+            +rem(padding, 1rem 2rem)
+            text-align: center
+            +border-radius(10px)
+
+            em
+                color: $color-gray-1
+
+    .logo-container
+        +rem(margin-bottom, 1.5rem)
+        text-align: center
+
+        @media screen and (min-width: $max-sm-width)
+            margin-bottom: 0
+            text-align: left
+
+        img.logo
+            max-width: 200px
+            width: 100%
+
+            @media screen and (min-width: $max-sm-width)
+                max-width: 250px
+
+
+    .main-info
+        +rem(margin, 0 1rem)
+
+        @media screen and (min-width: $max-sm-width)
+            margin: 0
+
+        .main-paragraph
+            p
+                +rem(font-size, 1.8rem)
+                line-height: 24px
+
+                @media screen and (min-width: $max-sm-width) // Versión de escritorio
+                    +rem(font-size, 1.4rem)
+
+
+        .main-title
+            h2
+                +rem(font-size, 2.4rem)
+                font-weight: normal
+                line-height: 30px
+                +rem(margin, 1rem 0)
+
+                @media screen and (min-width: $max-sm-width)
+                    +rem(font-size, 3.5rem)
+                    +rem(margin, 3rem 0 1.5rem)
+.navigation
+    background: $color-blue-1
+    text-align: center
+
+    .menu-content
+        +rem(margin, 0 auto)
+        max-width: $max-lg-width
+
+        ul
+            color: $color-gray-1
+            display: table // Ancho igual en todoos los menu items
+            +rem(font-size, 2rem)
+            list-style: none
+            margin: 0
+            padding: 0 15px
+            table-layout: fixed // Ancho igual en todoos los menu items
+            width: 100%
+
+            li
+                display: table-cell // Ancho igual en todoos los menu items
+
+                a
+                    color: $color-gray-1
+                    display: inline-block
+                    +rem(padding, 1.2rem 3rem)
+                    width: 100%
+
+                    &:hover
+                        background: $color-orange-1
+                        text-decoration: none
+
+                    &.selected
+                        background: $color-orange-1
+                        box-shadow: $selected-nav-item
