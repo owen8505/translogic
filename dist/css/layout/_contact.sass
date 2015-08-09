@@ -1,0 +1,37 @@
+.contact-section
+    +rem(margin-bottom, 4rem)
+
+    @media screen and (min-width: $max-sm-width)
+        margin-bottom: 0
+
+    form
+        +rem(margin-top, 5rem)
+
+        fieldset
+            border: none
+
+            &.actions
+                text-align: right
+
+        input[type=text], input[type=email], textarea
+            -webkit-appearance: none
+            -moz-appearance: none
+            background-color: rgba(5, 19, 30, 1)
+            border: 0px solid rgba(237, 134, 0, 1)
+            +border-radius(5px)
+            color: white
+            font: normal normal normal 16px/1.3em 'Open Sans',sans-serif
+            margin: 0 0 5px
+            +rem(padding, 1rem 2rem)
+            width: 100%
+
+        input
+            -webkit-appearance: none
+            -moz-appearance: none
+
+        input[type=submit]
+            border: none !important
+
+        textarea
+            resize: none
+

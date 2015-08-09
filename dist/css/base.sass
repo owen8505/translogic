@@ -4,10 +4,12 @@
 
 // Importamos variables globales
 @import "common/variables"
+@import "common/typorgraphy"
 @import "common/mixins"
 
 // Importamos los estilos del layout
 @import "layout/navigation"
+@import "layout/contact"
 
 // Importamos los estilos de los módulos
 @import "modules/index"
@@ -15,8 +17,29 @@
 
 body
     background-color: $color-gray-2
+    font-family: $font-stack
     margin: 0
     padding: 0
+
+.action-button
+    +rem(padding, 1rem 2rem)
+    +border-radius(10px)
+    text-align: center
+
+    &.orange-button
+        background-color: $color-orange-1
+        color: white
+        transition: 0.3s ease-in-out
+
+        &:hover
+            background-color: $color-orange-2
+            text-decoration: none
+
+.copyright
+    +rem(font-size, 1.4rem)
+    font-weight: normal
+    +rem(margin-top, 3rem)
+    text-align: center
 
 .header-content
     background: none
@@ -46,6 +69,9 @@ body
 
             em
                 color: $color-gray-1
+                font-style: normal
+                font-weight: normal
+
 
     .logo-container
         +rem(margin-bottom, 1.5rem)
@@ -87,38 +113,19 @@ body
 
                 @media screen and (min-width: $max-sm-width)
                     +rem(font-size, 3.5rem)
+                    line-height: 36px
                     +rem(margin, 3rem 0 1.5rem)
-.navigation
-    background: $color-blue-1
-    text-align: center
 
-    .menu-content
-        +rem(margin, 0 auto)
-        max-width: $max-lg-width
+.section
+    +rem(padding, 4rem 0)
 
-        ul
-            color: $color-gray-1
-            display: table // Ancho igual en todoos los menu items
-            +rem(font-size, 2rem)
-            list-style: none
-            margin: 0
-            padding: 0 15px
-            table-layout: fixed // Ancho igual en todoos los menu items
-            width: 100%
+    .section-title
+        font-family: 'Anton'
+        +rem(font-size, 2.6rem)
+        font-weight: bold
 
-            li
-                display: table-cell // Ancho igual en todoos los menu items
+    &.white-section
+        background-color: white
 
-                a
-                    color: $color-gray-1
-                    display: inline-block
-                    +rem(padding, 1.2rem 3rem)
-                    width: 100%
-
-                    &:hover
-                        background: $color-orange-1
-                        text-decoration: none
-
-                    &.selected
-                        background: $color-orange-1
-                        box-shadow: $selected-nav-item
+    &.blue-section
+        background-color: $color-blue-1

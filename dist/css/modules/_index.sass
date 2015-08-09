@@ -1,0 +1,47 @@
+.section-item
+    +rem(margin-bottom, 2rem)
+
+    @media screen and (min-width: $max-sm-width)
+        margin-bottom: 0
+
+    .section-item-wrapper
+        background-color: $color-gray-1
+        +rem(padding, 1rem)
+
+
+        .service-actions
+            +rem(margin, 6rem 0 1rem)
+            text-align: center
+
+        img.service-image
+            display: block
+            width: 100%
+
+        .service-description
+            background-color: white
+            +rem(padding, 2.3rem)
+
+            p
+                +rem(font-size, 1.3rem)
+
+        h3.service-title
+            background-color: $color-blue-1
+            color: $color-gray-2
+            font-family: 'Anton'
+            +rem(font-size, 2rem)
+            font-weight: normal
+            margin: 0
+            +rem(padding, 1rem)
+            position: relative
+
+            &:after
+                border-left: 10px solid transparent
+                border-right: 10px solid transparent
+                border-top: 10px solid $color-blue-1
+                bottom: -10px
+                left: 50%
+                content: ""
+                height: 0
+                position: absolute
+                transform: translateX(-50%)
+                width: 0
